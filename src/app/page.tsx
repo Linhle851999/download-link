@@ -4,11 +4,25 @@ import { useState } from 'react';
 
 const DownLoad = () => {
   const [url, setUrl] = useState('');
+  const [busy, setBusy] = useState(false);
 
-  const handleDownload = () => {
-    if (!url) return alert('Url invalid');
+  const openSystemDownloadSameTab = (rawUrl: string) => {
+    const iframe = document.createElement('iframe');
+    iframe.style.display = 'none';
+    iframe.src = rawUrl;
+    document.body.appendChild(iframe);
+    setTimeout(() => iframe.remove(), 60_000);
+  };
 
-    window.location.href = `/api/download-video?url=${encodeURIComponent(url)}`;
+  const handleDownload = async () => {
+    if (!url || busy) return;
+    setBusy(true);
+    try {
+      const apiUrl = `/api/download-video?url=${encodeURIComponent(url)}`;
+      openSystemDownloadSameTab(apiUrl);
+    } finally {
+      setTimeout(() => setBusy(false), 1500);
+    }
   };
 
   const onButtonClick = (e: React.FormEvent) => {
@@ -55,14 +69,14 @@ const DownLoad = () => {
             </div>
             <button
               type="submit"
-              disabled={!url}
+              disabled={!url || busy}
               className={`w-full sm:w-auto px-4 py-2 rounded-lg transition-colors duration-200 ${
-                !url
+                !url || busy
                   ? 'bg-blue-300 text-white opacity-60 cursor-not-allowed'
                   : 'bg-blue-600 text-white hover:bg-blue-700'
               }`}
             >
-              Download
+              {busy ? 'Loading…' : 'Download'}
             </button>
           </form>
           <p className="mt-3 text-sm text-gray-500 text-center">
