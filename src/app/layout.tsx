@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   description:
     'Free TikTok video downloader. Download HD TikTok videos without watermark quickly and easily. No registration required.',
   keywords:
-    'tiktok download, tiktok video download, download tiktok without watermark, tiktok saver, tải video tiktok, tải video tiktok không logo, tải video',
+    'tiktok download, tiktok video download, download tiktok without watermark, tiktok saver, tải video tiktok, tải video tiktok không logo, tải video, tải tiktok',
   authors: [{ name: 'TokSave' }],
   creator: 'TokSave',
   publisher: 'TokSave',
@@ -59,6 +59,7 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  // TODO: update later
   // verification: {
   //   google: 'your-google-verification-code',
   // },
