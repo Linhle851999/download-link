@@ -5,6 +5,6 @@ module.exports = {
   rules: {
     'prettier/prettier': 'error',
     'import/no-unresolved': 'off',
-    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/no-explicit-any': 'false',
   },
 };
