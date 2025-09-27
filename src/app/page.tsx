@@ -6,17 +6,9 @@ const DownLoad = () => {
   const [url, setUrl] = useState('');
   const [busy, setBusy] = useState(false);
   const [downloadCount, setDownloadCount] = useState(0);
-  const [adVisible, setAdVisible] = useState(true);
 
   useEffect(() => {
     setDownloadCount(12487);
-
-    // Simulate ad loading
-    const timer = setTimeout(() => {
-      setAdVisible(true);
-    }, 1000);
-
-    return () => clearTimeout(timer);
   }, []);
 
   const openSystemDownloadSameTab = (rawUrl: string) => {
@@ -51,33 +43,6 @@ const DownLoad = () => {
     handleDownload();
   };
 
-  // Ad spaces configuration
-  const adSpaces = [
-    {
-      id: 1,
-      type: 'banner',
-      code: `<!-- Google AdSense Banner -->
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-XXXXXXXXXXXXXX"
-           data-ad-slot="XXXXXXXXXX"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>`,
-      description: 'Sponsored',
-    },
-    {
-      id: 2,
-      type: 'native',
-      title: "🔥 Editors' Choice",
-      subtitle: 'Top Video Editor App',
-      description: 'Create amazing videos easily',
-      cta: 'Download Now',
-      url: '#',
-      sponsored: true,
-    },
-  ];
-
   return (
     <main>
       <header className="fixed top-0 left-0 w-full bg-white shadow-sm sm:px-40 py-3 flex items-center justify-center sm:justify-start z-50">
@@ -102,7 +67,7 @@ const DownLoad = () => {
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-blue-100 p-4 pt-20">
         <div className="w-full max-w-4xl grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Main Download Section */}
-          <div className="lg:col-span-2 bg-white rounded-xl shadow-lg p-6">
+          <div className="lg:col-span-3 bg-white rounded-xl shadow-lg p-6 mt-4">
             {/* Social Proof */}
             <div className="text-center mb-6">
               <div className="inline-flex items-center gap-2 bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm">
@@ -164,53 +129,6 @@ const DownLoad = () => {
                 )}
               </button>
             </form>
-
-            {/* Small Banner Ad */}
-            <div className="mt-6 text-center">
-              <div className="text-xs text-gray-500 mb-2">ADVERTISEMENT</div>
-              <div className="bg-gray-100 rounded-lg p-4 min-h-[90px] flex items-center justify-center">
-                {adVisible ? (
-                  <div className="text-center">
-                    <div className="text-sm text-gray-600">Loading ad...</div>
-                    {/* Google AdSense sẽ hiển thị ở đây */}
-                    <div
-                    // dangerouslySetInnerHTML={{ __html: adSpaces[0].code }}
-                    />
-                  </div>
-                ) : (
-                  <div className="text-sm text-gray-500">Ad space</div>
-                )}
-              </div>
-            </div>
-          </div>
-
-          {/* Ad Sidebar Section */}
-          <div className="space-y-4">
-            {/* Google AdSense Square */}
-            <div className="bg-gray-50 rounded-xl p-4 text-center">
-              <div className="text-xs text-gray-500 mb-2">ADVERTISEMENT</div>
-              <div className="min-h-[250px] flex items-center justify-center">
-                {adVisible ? (
-                  // <div
-                  //   dangerouslySetInnerHTML={{
-                  //     __html: `
-                  //   <!-- Google AdSense Square -->
-                  //   <ins class="adsbygoogle"
-                  //        style="display:block"
-                  //        data-ad-client="ca-pub-XXXXXXXXXXXXXX"
-                  //        data-ad-slot="XXXXXXXXXX"
-                  //        data-ad-format="rectangle"
-                  //        data-full-width-responsive="true"></ins>
-                  //   <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                  // `,
-                  //   }}
-                  // />
-                  <></>
-                ) : (
-                  <div className="text-sm text-gray-400">Ad loading...</div>
-                )}
-              </div>
-            </div>
           </div>
 
           {/* How it works section */}

@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   authors: [{ name: 'TokSave' }],
   creator: 'TokSave',
   publisher: 'TokSave',
-  metadataBase: new URL('https://yoursite.com'),
+  metadataBase: new URL('https://toksave.space'),
   alternates: {
     canonical: '/',
   },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: 'TokSave - Download TikTok Video Without Watermark',
     description:
       'Free TikTok video downloader. Download HD TikTok videos without watermark',
-    url: 'https://yoursite.com',
+    url: 'https://toksave.space',
     siteName: 'TokSave',
     images: [
       {
@@ -59,9 +59,9 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    google: 'your-google-verification-code',
-  },
+  // verification: {
+  //   google: 'your-google-verification-code',
+  // },
 };
 
 export default function RootLayout({

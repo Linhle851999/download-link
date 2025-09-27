@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/admin/'],
       },
     ],
-    sitemap: 'https://yoursite.com/sitemap.xml',
+    sitemap: 'https://toksave.space/sitemap.xml',
   };
 }
