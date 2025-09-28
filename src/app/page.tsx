@@ -1,6 +1,7 @@
 'use client';
-
 import { useState, useEffect } from 'react';
+
+import { sendSlack } from '@/utils/webhook';
 
 const DownLoad = () => {
   const [url, setUrl] = useState('');
@@ -23,7 +24,6 @@ const DownLoad = () => {
       { threshold: 0.6 }
     );
 
-    // Theo dõi các section
     const sections = document.querySelectorAll('section[id]');
     sections.forEach((section) => observer.observe(section));
 
@@ -52,6 +52,10 @@ const DownLoad = () => {
           event_label: 'tiktok_download',
         });
       }
+
+      sendSlack(
+        `🚀 A new user just visited the website at ${new Date().toLocaleString()}`
+      );
     } finally {
       setTimeout(() => setBusy(false), 1500);
     }
