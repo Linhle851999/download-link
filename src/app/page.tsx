@@ -1,7 +1,8 @@
 'use client';
+
 import { useState, useEffect } from 'react';
 
-import { sendSlack } from '@/utils/webhook';
+import { sendSlack } from '@/actions/slack';
 
 const DownLoad = () => {
   const [url, setUrl] = useState('');
