@@ -13,11 +13,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'TokSave - Download TikTok Video Without Watermark',
+  title: 'TokSave: Download TikTok Video Without Watermark',
   description:
-    'Free TikTok video downloader. Download HD TikTok videos without watermark quickly and easily. No registration required.',
+    'TokSave is the fastest tool to download HD TikTok videos without watermark. No registration, free and easy to use.',
   keywords:
-    'tiktok download, tiktok video download, download tiktok without watermark, tiktok saver, tải video tiktok, tải video tiktok không logo, tải video, tải tiktok, TokSave, SnapSave, Save Tiktok',
+    'tiktok download, tiktok video download, download tiktok without watermark, tiktok saver, tải video tiktok, tải video tiktok không logo, tải video, tải tiktok, TokSave, SnapSave, Save Tiktok, download tiktok, tải video tiktok, down tiktok',
   authors: [{ name: 'TokSave' }],
   creator: 'TokSave',
   publisher: 'TokSave',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'TokSave - Download TikTok Video Without Watermark',
+    title: 'TokSave: Download TikTok Video Without Watermark',
     description:
       'Free TikTok video downloader. Download HD TikTok videos without watermark',
     url: 'https://toksave.space',
@@ -39,12 +39,23 @@ export const metadata: Metadata = {
         alt: 'TokSave - TikTok Video Downloader',
       },
     ],
-    locale: 'vi_VN',
+    // locale: 'vi_VN',
     type: 'website',
   },
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
+  manifest: '/manifest.json',
   twitter: {
     card: 'summary_large_image',
-    title: 'TokSave - Download TikTok Video Without Watermark',
+    title: 'TokSave: Download TikTok Video Without Watermark',
     description: 'Free TikTok video downloader',
     images: ['/og-image.png'],
   },
