@@ -56,7 +56,9 @@ const DownLoad = () => {
       }
 
       sendSlack(
-        `🚀 A new user just visited the website at ${new Date().toLocaleString()}`
+        `🚀 A new user just visited the website at ${new Date().toLocaleString()}, ${encodeURIComponent(
+          url
+        )}`
       );
     } finally {
       setTimeout(() => setBusy(false), 1500);
